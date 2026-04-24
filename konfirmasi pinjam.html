@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pinjam Buku - SIPUS Library</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006c49",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#171c1f",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#1e3a8a",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#d3e4fe",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-fixed-dim": "#c3c7cb",
+                        "on-tertiary-container": "#a8adb1",
+                        "inverse-on-surface": "#eaf1ff",
+                        "inverse-surface": "#213145",
+                        "outline": "#757682",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00164e",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-container": "#90a8ff",
+                        "on-primary-fixed-variant": "#264191",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-container": "#00714d",
+                        "inverse-primary": "#b6c4ff",
+                        "on-tertiary-fixed-variant": "#43474b",
+                        "tertiary": "#262b2e",
+                        "secondary-fixed": "#6ffbbe",
+                        "primary-fixed": "#dce1ff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#4059aa",
+                        "surface": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#3c4144",
+                        "on-background": "#0b1c30",
+                        "tertiary-fixed": "#dfe3e7",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "primary": "#00236f",
+                        "outline-variant": "#c5c5d3",
+                        "on-surface-variant": "#444651"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "container-max": "1440px",
+                        "base": "4px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Manrope"],
+                        "button": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "button": ["15px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-body-md text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopAppBar -->
+    <header
+        class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center w-full px-4 h-16 sticky top-0 z-50 transition-colors duration-200">
+        <button
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+            <span class="material-symbols-outlined text-blue-900 dark:text-blue-400">arrow_back</span>
+        </button>
+        <h1 class="font-manrope font-semibold text-lg text-blue-900 dark:text-blue-400 ml-2">Borrow Book</h1>
+    </header>
+    <main class="max-w-xl mx-auto px-lg py-lg mb-32">
+        <!-- Book Summary Section (Bento Style Card) -->
+        <section
+            class="grid grid-cols-1 md:grid-cols-3 gap-md bg-surface-container-lowest p-md rounded-xl border border-outline-variant mb-lg overflow-hidden">
+            <div class="col-span-1">
+                <div class="aspect-[2/3] rounded-lg overflow-hidden bg-surface-variant relative shadow-sm">
+                    <img alt="Book Cover" class="w-full h-full object-cover"
+                        data-alt="Modern book cover with architectural blueprints and gold typography on a deep blue background, professional studio lighting"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDryjBQbJelpWIp7_cDv2g94cIBlU8KHxcbfw3SliRbhdk66A2wC0fxvXv8TN9f7gkVo8E31EziRrU-lgddLOXYSLhx4qKlcT1EO2uVNjzQn8MFTDlk6miZS09AmZQoBJFKt4XwEYFm5Pr36Xo-J6eTTbV2_R51aOk8auOUbhfOFcOkRuNuUOCl7dQz8S0Es6dyIkFFpZcn1mhDYWsBQuOYotOmot3KIqsEJQ7cPtIBYqAr7odzkNBoUA-pSbofX8ehCByDepd_kRM" />
+                </div>
+            </div>
+            <div class="col-span-2 flex flex-col justify-center space-y-sm">
+                <div>
+                    <span
+                        class="font-label-caps text-label-caps text-secondary uppercase bg-secondary-container px-2 py-1 rounded">Architecture</span>
+                </div>
+                <h2 class="font-h3 text-h3 text-on-surface">The Architect of Tomorrow</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">Dr. Alistair Thorne</p>
+                <div class="flex items-center gap-xs mt-2 text-primary">
+                    <span class="material-symbols-outlined text-[18px]"
+                        style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="font-label-caps text-label-caps">4.9 (1.2k Reviews)</span>
+                </div>
+            </div>
+        </section>
+        <!-- Form Section -->
+        <section class="space-y-lg">
+            <div class="bg-white p-lg rounded-xl border border-outline-variant space-y-md shadow-sm">
+                <h3 class="font-h3 text-[18px] text-primary flex items-center gap-sm">
+                    <span class="material-symbols-outlined">edit_calendar</span>
+                    Detail Peminjaman
+                </h3>
+                <!-- Borrow Date (Today) -->
+                <div class="space-y-xs">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant block">Tanggal Pinjam</label>
+                    <div class="relative">
+                        <input
+                            class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-on-surface-variant cursor-not-allowed"
+                            readonly="" type="text" value="October 24, 2023" />
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">today</span>
+                    </div>
+                </div>
+                <!-- Duration Picker -->
+                <div class="space-y-xs">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant block">Durasi Pinjam</label>
+                    <div class="grid grid-cols-3 gap-sm">
+                        <label class="relative cursor-pointer">
+                            <input checked="" class="peer sr-only" name="duration" type="radio" />
+                            <div
+                                class="p-sm text-center border border-outline-variant rounded-lg font-button text-button peer-checked:border-secondary peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-all">
+                                3 Days
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input class="peer sr-only" name="duration" type="radio" />
+                            <div
+                                class="p-sm text-center border border-outline-variant rounded-lg font-button text-button peer-checked:border-secondary peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-all">
+                                7 Days
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer">
+                            <input class="peer sr-only" name="duration" type="radio" />
+                            <div
+                                class="p-sm text-center border border-outline-variant rounded-lg font-button text-button peer-checked:border-secondary peer-checked:bg-secondary-container peer-checked:text-on-secondary-container transition-all">
+                                14 Days
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- Return Date -->
+                <div class="space-y-xs">
+                    <label class="font-label-caps text-label-caps text-on-surface-variant block">Tanggal Kembali</label>
+                    <div class="relative">
+                        <input
+                            class="w-full px-md py-sm bg-surface-container-highest border border-primary-container text-primary font-body-md font-semibold rounded-lg"
+                            readonly="" type="text" value="October 27, 2023" />
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary">event_upcoming</span>
+                    </div>
+                    <p class="text-[12px] text-secondary flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[14px]">info</span>
+                        Return by 5:00 PM to avoid late fees.
+                    </p>
+                </div>
+            </div>
+            <!-- Terms & Conditions -->
+            <div class="p-md rounded-xl bg-surface-container-high border border-outline-variant">
+                <label class="flex items-start gap-sm cursor-pointer group">
+                    <div class="relative flex items-center mt-1">
+                        <input
+                            class="peer appearance-none w-5 h-5 border-2 border-primary rounded-md checked:bg-primary checked:border-primary transition-all"
+                            type="checkbox" />
+                        <span
+                            class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-[16px] left-1/2 -translate-x-1/2">check</span>
+                    </div>
+                    <span class="font-body-sm text-body-sm text-on-surface">
+                        I agree to the <span class="text-primary font-semibold underline">Syarat &amp; Ketentuan</span>.
+                        I understand that overdue returns will incur a fine of Rp 5.000/day.
+                    </span>
+                </label>
+            </div>
+            <!-- CTA Button -->
+            <a href="berhasilpinja.html"
+                class="w-full bg-primary text-on-primary h-14 rounded-full font-button text-button text-lg flex items-center justify-center gap-sm shadow-lg hover:brightness-110 active:scale-95 transition-all text-center">
+
+                Konfirmasi Peminjaman
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+    </main>
+    <!-- BottomNavBar -->
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(30,58,138,0.05)]">
+        <div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Beranda</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-emerald-600 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/20 rounded-xl px-3 py-1">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Buku</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+            <span class="material-symbols-outlined">collections_bookmark</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Pinjam</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Akun</span>
+        </div>
+    </nav>
+</body>
+
+</html>

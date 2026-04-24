@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Konfirmasi Pembayaran | SIPUS Library</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-tint": "#4059aa",
+                        "secondary": "#006c49",
+                        "error": "#ba1a1a",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#1e3a8a",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c5c5d3",
+                        "inverse-primary": "#b6c4ff",
+                        "primary-fixed": "#dce1ff",
+                        "on-background": "#0b1c30",
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "on-surface-variant": "#444651",
+                        "on-secondary": "#ffffff",
+                        "primary": "#00236f",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-container": "#90a8ff",
+                        "on-tertiary-container": "#a8adb1",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed": "#171c1f",
+                        "background": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#dfe3e7",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#264191",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#262b2e",
+                        "tertiary-container": "#3c4144",
+                        "surface-container-low": "#eff4ff",
+                        "outline": "#757682",
+                        "on-secondary-fixed": "#002113",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed": "#00164e",
+                        "on-tertiary-fixed-variant": "#43474b",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#6cf8bb",
+                        "tertiary-fixed-dim": "#c3c7cb",
+                        "primary-fixed-dim": "#b6c4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "xs": "4px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "button": ["Inter"],
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "h1": ["Manrope"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "button": ["15px", { "lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "h1": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col">
+    <!-- Top AppBar -->
+    <header
+        class="flex justify-between items-center w-full px-6 py-4 sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-900 shadow-sm shadow-blue-900/5">
+        <div class="flex items-center gap-4">
+            <button
+                class="material-symbols-outlined text-blue-900 dark:text-blue-400 p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full scale-95 active:transition-transform"
+                data-icon="close">close</button>
+            <h1 class="font-manrope font-semibold text-lg text-blue-900 dark:text-blue-400">Payment Confirmed</h1>
+        </div>
+        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-surface-container">
+            <img alt="User profile picture" class="w-full h-full object-cover"
+                data-alt="Close-up portrait of a professional man in his 30s with a clean-cut look and a friendly expression"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlTQR05eq3ouTIVGHq6-iam5dAv_k8-LUGIf2gUuZ3PR181k7zB7hDxeQjBitZsraTVjIWUib1pNsQI781U8mwr3QnvpFFQaQf89eErfUaV3VC5wpeRILzjbsbGAaVv2zhOAkL1dPsQ_WlyGOy88SDVzajnzeg2o7ofx4l6dX96XzGOX0DWg03jkJXMZHY7nPQdOguxRA2wae13i_-DTJ7UEtuxNqOoiQD8E3ru-lX_wbau1LnURR3pZNr8P-tGrt8W20tX51a57k" />
+        </div>
+    </header>
+    <main class="flex-grow px-6 pt-12 pb-24 overflow-y-auto max-w-md mx-auto w-full">
+        <!-- Success State Hero -->
+        <div class="flex flex-col items-center text-center mb-10 success-gradient rounded-full py-6">
+            <div
+                class="w-20 h-20 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-6 shadow-xl shadow-secondary/10">
+                <span class="material-symbols-outlined !text-4xl" data-icon="check_circle"
+                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <h2 class="font-h2 text-h2 text-primary mb-2">Pembayaran Berhasil!</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-[280px]">Status peminjaman buku Anda telah
+                diperbarui menjadi <span class="font-bold text-secondary">Terkumpul/Selesai</span>.</p>
+        </div>
+        <!-- Transaction Details Card (Glassmorphism / Tonal Layers) -->
+        <div
+            class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm mb-8">
+            <div class="bg-primary-container p-4 flex justify-between items-center">
+                <span class="font-label-caps text-label-caps text-on-primary-container">TRANSACTION ID</span>
+                <span class="font-body-sm text-body-sm text-white font-bold">#PAY-88291</span>
+            </div>
+            <div class="p-6 space-y-5">
+                <!-- Detail Row: Book -->
+                <div class="flex items-start gap-4">
+                    <div
+                        class="w-12 h-16 bg-surface-container-high rounded flex-shrink-0 overflow-hidden border border-outline-variant">
+                        <img alt="Book Cover" class="w-full h-full object-cover"
+                            data-alt="Clean minimalist book cover design for 'The Architect of Tomorrow' featuring abstract geometric shapes in blue and teal"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBALiZIbk-Vr4VyeVSzZQ-teT6_1HB6jgQSH1E35I-fQzpscsTuzwbuwJuUTO6gIvL4f9ddpIEfC_s5NJyC1zuYjz_ru8YGpnr80_JkPDug9zlgb70zC3eofxa7WduCTkGMVj9sCDGtFx0-6_KH1p1hbK_laeHaqDXSI-zIrNau_gGev1hz2xc0dSIkQLowCIKbNg__h_EWn2UkoJYCPGR-N0YoJmxRRRp0t5wRE-vYNBQM8z9NA6qzgjHyXKiIV8iT3TuHUJHZTyE" />
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-label-caps text-[10px] text-outline uppercase tracking-widest mb-1">Book
+                            Title</span>
+                        <h3 class="font-h3 text-body-md font-bold text-primary">The Architect of Tomorrow</h3>
+                    </div>
+                </div>
+                <hr class="border-slate-100" />
+                <!-- Detail Row: Amount -->
+                <div class="flex justify-between items-center">
+                    <div class="flex flex-col">
+                        <span class="font-label-caps text-[10px] text-outline uppercase tracking-widest">Amount
+                            Paid</span>
+                        <p class="font-body-md font-bold text-primary">Rp 16.000</p>
+                    </div>
+                    <div class="flex flex-col items-end">
+                        <span class="font-label-caps text-[10px] text-outline uppercase tracking-widest">Payment
+                            Method</span>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 bg-secondary rounded-full"></span>
+                            <p class="font-body-md font-medium text-on-surface">GoPay</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-slate-100" />
+                <!-- Detail Row: Date -->
+                <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-outline"
+                        data-icon="calendar_today">calendar_today</span>
+                    <div class="flex flex-col">
+                        <span class="font-label-caps text-[10px] text-outline uppercase tracking-widest">Transaction
+                            Date</span>
+                        <p class="font-body-sm text-on-surface-variant">15 Okt 2023, 14:30</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative Receipt Edge -->
+            <div class="h-4 w-full receipt-edge opacity-10"></div>
+        </div>
+        <!-- Feedback Info Chip -->
+        <div class="bg-surface-container-low border border-blue-100 rounded-lg p-4 flex gap-3 mb-10 items-center">
+            <span class="material-symbols-outlined text-primary" data-icon="info"
+                style="font-variation-settings: 'FILL' 1;">info</span>
+            <p class="font-body-sm text-body-sm text-primary font-medium italic">Resi digital telah dikirimkan ke email
+                terdaftar Anda.</p>
+        </div>
+        <!-- Action Cluster -->
+        <div class="flex flex-col gap-3">
+            <button
+                class="w-full bg-primary text-white font-button text-button py-4 rounded-xl shadow-md shadow-primary/20 hover:bg-primary/90 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span>
+                Lihat Koleksi Saya
+            </button>
+            <button
+                class="w-full bg-transparent border border-primary text-primary font-button text-button py-4 rounded-xl hover:bg-primary/5 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                Unduh Resi
+            </button>
+        </div>
+    </main>
+    <!-- Bottom Navigation Bar (Hidden on Desktop via Shared Comp Logic) -->
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(30,58,138,0.05)]">
+        <div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Beranda</span>
+        </div>
+        <div
+            class="flex flex-col items-center justify-center text-emerald-600 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/20 rounded-xl px-3 py-1">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Buku</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+            <span class="material-symbols-outlined">collections_bookmark</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Pinjam</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-[10px] font-manrope font-semibold uppercase tracking-wider mt-1">Akun</span>
+        </div>
+    </nav>
+</body>
+
+</html>
